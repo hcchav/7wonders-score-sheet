@@ -11,6 +11,6 @@ angular.module('myApp.view1', ['ui.router'])
   });
 }])
 
-.controller('View1Ctrl', function View1Ctrl ($scope) {
-	$scope.players = 7;
+.controller('View1Ctrl', function View1Ctrl ($scope, gameService) {
+	$scope.players = gameService.getNumberOfPlayers();
 });

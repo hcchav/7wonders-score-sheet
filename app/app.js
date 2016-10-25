@@ -7,6 +7,8 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.version',
   'myApp.players',
+  'myApp.military',
+  'myApp.playerTable',
   'gameService'
 ]).
 config(['$locationProvider', '$urlRouterProvider', function($locationProvider, $urlRouterProvider) {

@@ -7,7 +7,7 @@ angular.module('myApp.military', ['ui.router'])
   	.state('military', {
   		url: '/military',
     	templateUrl: 'military/military.html',
-    	controller: 'PlayersCtrl'
+    	controller: 'MilitaryCtrl'
   });
 }])
 

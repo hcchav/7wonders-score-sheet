@@ -5,14 +5,24 @@ angular.module('gameService', [])
 		$log.log("gameService instatiating....");
 
 		var game = {
+
 			players: [],
-			addPlayer: function(player){
-				this.players.push(player);
+
+			addPlayer: function (newPlayer){
+				this.players.push(newPlayer);
 			},
 			removePlayer: function(player){
 
+			},
+			getPlayers: function(){
+				return this.players;
+			},
+			getNumberOfPlayers: function(){
+				return this.players.length;
 			}
-		}; 
+		};
+
+		
 
 		var player = {
 			name: '',
