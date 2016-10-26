@@ -66,13 +66,5 @@ angular.module('myApp.players', ['ui.router'])
 		modalService.closeModal(id);
 	}
 
-}).directive('selectMaterial', ['$interval', 'dateFilter', function($interval, dateFilter) {
-
-   return function postLink(scope, iElement, iAttrs) { 
-   		
-			
-
-   	
-   }
-}]);
+})
 
