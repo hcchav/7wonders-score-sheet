@@ -9,7 +9,8 @@ angular.module('myApp', [
   'myApp.players',
   'myApp.military',
   'myApp.playerTable',
-  'gameService'
+  'gameService',
+  'ngMaterial'
 ]).
 config(['$locationProvider', '$urlRouterProvider', function($locationProvider, $urlRouterProvider) {
   $locationProvider.hashPrefix('!');

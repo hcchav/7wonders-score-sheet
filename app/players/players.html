@@ -1,7 +1,7 @@
 <!-- Player View -->
 <div class="row" ng-controller="PlayersCtrl">
 	<div class="col s12">
-	    <div class="card">
+	    <md-card>
 	   		<div player-table>
 				
 	   		</div> 
@@ -9,15 +9,25 @@
 				 <i class="col s2 medium material-icons right" ng-click="addPlayer()">perm_identity</i>
 				 <i class="col s2 medium material-icons right">perm_identity</i>
 			</div>
-	    </div>
+	    </md-card>
 		  <!-- Modal Structure -->
-		<div class="row">
-			<div class="input-field col s6">
+		<md-card>
+			<div class="input-field col s12">
 	          	<label>Name:</label>
 	         	<input type="text" name="" ng-model="newPlayer.name">
-	         	<!-- <select ng-options="wonder.city for wonder in wonders" ng-model="newPlayer.wonder"></select> -->
-	          <button ng-click="addPlayer()">addPlayer</button>
 	    	</div>
-		</div>
+	    	
+	    	<div layout="row" >
+			  <md-select ng-model="newPlayer.wonder" flex="33">
+			    <md-option ng-value="wonder" ng-repeat="wonder in wonders">{{ wonder.city }}
+			    </md-option>
+			  </md-select>
+			</div>
+	    	<div>
+	    		<a ng-click="addPlayer()" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+	    	</div>
+			
+		</md-card>
+		
 	</div>
 </div>

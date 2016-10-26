@@ -37,10 +37,10 @@ angular.module('myApp.players', ['ui.router'])
 	$scope.addPlayer = function(){
 		var newPlayer = {
 			name: $scope.newPlayer.name,
-			wonder: $scope.newPlayer.wonder
+			wonder: $scope.newPlayer.wonder.city
 		}
 		gameService.addPlayer(newPlayer);
-		
+
 		$scope.newPlayer.name = "";
 		$scope.newPlayer.wonder = "";
 	};
@@ -61,5 +61,13 @@ angular.module('myApp.players', ['ui.router'])
 		modalService.closeModal(id);
 	}
 
-});
+}).directive('selectMaterial', ['$interval', 'dateFilter', function($interval, dateFilter) {
+
+   return function postLink(scope, iElement, iAttrs) { 
+   		
+			
+
+   	
+   }
+}]);
 
