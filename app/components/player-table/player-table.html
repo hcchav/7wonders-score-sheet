@@ -8,7 +8,10 @@
 	<tbody>
 	  <tr ng-repeat="player in players">
 	    <td class="col s6">{{ player.name }}</td>
-	    <td class="col s6"><input class="" type="text" name="" value="{{ player.wonder }}" /></td>
+	    <td class="col s6">
+	    	<input class="" type="text" name="" value="{{ player.wonder }}" />
+			<button ng-click="removePlayer(player)" ng-show="remove" class="">remove</button>
+	    </td>
 	  </tr>
 	</tbody>
 </table>

@@ -12,7 +12,7 @@ angular.module('gameService', [])
 				this.players.push(newPlayer);
 			},
 			removePlayer: function(player){
-
+				this.players.splice(this.players.indexOf(player), 1);
 			},
 			getPlayers: function(){
 				return this.players;

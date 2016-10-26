@@ -13,6 +13,7 @@ angular.module('myApp.players', ['ui.router'])
 
 .controller('PlayersCtrl', function PlayersCtrl ($log, $scope, gameService) {
 
+	$scope.remove = false;
 	// Service Players
 	$scope.players = gameService.getPlayers();
 	
@@ -44,6 +45,10 @@ angular.module('myApp.players', ['ui.router'])
 		$scope.newPlayer.name = "";
 		$scope.newPlayer.wonder = "";
 	};
+
+	$scope.edit = function(){
+		$scope.remove = !$scope.remove;
+	}
 
 	$scope.removePlayer = function(player){
 		gameService.removePlayer(player);
