@@ -8,7 +8,9 @@ angular.module('myApp', [
   'myApp.version',
   'myApp.players',
   'myApp.military',
-  'myApp.playerTable',
+  'playerTable',
+  'playerColumns',
+  'playerColumn',
   'gameService',
   'ngMaterial'
 ]).

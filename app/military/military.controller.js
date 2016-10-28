@@ -12,6 +12,7 @@ angular.module('myApp.military', ['ui.router'])
 }])
 
 .controller('MilitaryCtrl', function MilitaryCtrl ($scope, gameService) {
-	$scope.players = 7;
+	var players = [{name: 'heron' }, {name: 'kevin'}];
+	$scope.players = players;
 });
 

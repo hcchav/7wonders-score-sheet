@@ -24,7 +24,6 @@ angular.module('gameService', [])
 		};
 
 		
-
 		var player = {
 			name: '',
 			wonder: '',
@@ -32,24 +31,23 @@ angular.module('gameService', [])
 				treasury: 0,
 				commercial: 0,
 				science: {
-					gear: 0,
-					tablet: 0,
+					gear: 2,
+					tablet: 3,
 					compass: 0,
 					getScienceTotal: function(){
-						// find minimun science points
-						var gearIdenticalPoints = this.getIdenticalPoints(this.gear);
-						var tabletIdenticalPoints = this.getIdenticalPoints(this.tablet);
-						var compassIdenticalPoints = this.getIdenticalPoints(this.compass);
+						
+						var gearIdenticalPoints = this.getIdenticalCardPoints(this.gear);
+						var tabletIdenticalPoints = this.getIdenticalCardPoints(this.tablet);
+						var compassIdenticalPoints = this.getIdenticalCardPoints(this.compass);
 						var groupSetPoints = this.getGroupSetPoints();
 
 						var TotalSum = gearIdenticalPoints + tabletIdenticalPoints + compassIdenticalPoints + groupSetPoints;
 
 						return TotalSum;							
 
-
 					},
-					getIdenticalPoints: function (numberOfScienceCards){
-						return Math.pow(numberOfScienceCards.length, 2);
+					getIdenticalCardPoints: function (numberOfScienceCards){
+						return Math.pow(numberOfScienceCards, 2);
 					},
 					getGroupSetPoints:  function() {
 						if(this.gear === 0 || this.tablet === 0 || this.compass === 0){
@@ -63,7 +61,7 @@ angular.module('gameService', [])
 			}
 		};
 
-		player.points.science.getScienceTotal();
+		
 
 
 		return game;

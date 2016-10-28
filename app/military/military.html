@@ -1,9 +1,12 @@
 <p>This is the partial for military.</p>
 <div ng-controller="MilitaryCtrl">
-
-
-    
-    
-  </div>
-	
-</div>
+	<md-card>
+		<player-table players="players"> 
+			<player-columns>
+				<player-column title="Player" type="text"></player-column>
+				<!-- <player-column title="Wonder" type="points"></player-column> -->
+				<player-column title="Wonder" type="points-science"></player-column>
+			</player-columns>
+		</player-table> 
+	</md-card>
+</div>	

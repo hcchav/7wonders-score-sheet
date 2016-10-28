@@ -1,17 +1,29 @@
 <table class="bordered">
 	<thead>
 	  <tr>
-	      <th class="col s6" data-field="id">Name</th>
-	      <th class="col s6" data-field="name">Wonder</th>
+	      <th ng-repeat="col in cols" class="col s6">{{ col.title }}</th>	      
 	  </tr>
 	</thead>
 	<tbody>
 	  <tr ng-repeat="player in players">
-	    <td class="col s6">{{ player.name }}</td>
-	    <td class="col s6">
-	    	<input class="" type="text" name="" value="{{ player.wonder }}" />
-			<button ng-click="removePlayer(player)" ng-show="remove" class="">remove</button>
-	    </td>
+	  	<td ng-repeat="col in cols">
+	  		<!-- Player Name Column -->
+	    	<span ng-if="col.type === 'text'" class="col s6">{{ player.name }}</span>	
+	    	<!-- Wonder Player Column -->
+		   	 <div ng-if="col.type === 'wonder'" class="col s6">
+		    	<span class="" type="text" name="">{{ player.wonder }}</span>
+				<button ng-click="removePlayer(player)" ng-show="remove" class="">remove</button>
+		    </div>
+		    <!-- Points Column -->
+		    <input ng-if="col.type === 'points'" type="number" value="0" />
+		    <!-- Science Points Column -->
+      		<div ng-if="col.type === 'points-science'">
+      			<input type="number" name="" value="0" /> |
+      			<input type="number" name="" value="0" /> |
+      			<input type="number" name="" value="0" /> |
+      		</div>
+	  	</td>
 	  </tr>
 	</tbody>
 </table>
+					
