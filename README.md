@@ -3,9 +3,11 @@
 ## Description
 
 "Under Construction"
+
 Boardgame end game scoring web application built with Angularjs
 
 Boardgame: 7 Wonders
+
 Website: http://www.rprod.com/?page=description-22
 
 ### Prerequisites
