@@ -20,21 +20,23 @@
 			scope: {
 				players: '='
 			},
-			controller: function($scope){
-				
-				$scope.cols = [{title: "Name", type: "text"}, {title: "Wonder", type: "wonder"}];
+			controller: function($scope){ 
+				// $scope.cols = [{title: "Name", type: "text"}, {title: "Wonder", type: "points"}];// test
+				this.setColumns = function(cols){
+					$scope.cols = cols;	
+				}
 			},
 			templateUrl: "components/player-table/player-table.html",
-			link: function (scope, element, attributes) {
-				console.log(scope);
-				console.log('playerTable directive');
-					
+			link: function (scope, element, attributes, playerColumnsController) {
+				// console.log($scope.cols);
+				console.log('player Table linked');
 			}
 		};
 	});
 	angular.module("playerColumns",[]).directive("playerColumns", function() {
 		return {
 			restrict: "E",
+			require: ['^playerTable', 'playerColumns'],
 			controller: function(){
 				var columns = [];
 				this.addColumn = function(col){
@@ -44,10 +46,13 @@
 					return columns;
 				};
 			},
-			link: function(scope, element, attributes){
-				console.log('playerColumns directive');
-				
+			link: function(scope, element, attributes, controllers){
+				console.log('playerColumns linked');// test
+				var playerTableController = controllers[0];
+				var playerColumnsController = controllers[1];
 
+				playerTableController.setColumns(playerColumnsController.getColumns());				
+				console.log(playerColumnsController.getColumns());
 			}
 		};
 	});
@@ -56,11 +61,11 @@
 			restrict: "E",
 			require: "^playerColumns",
 			link: function(scope, element, attributes, playerColumnsController){
-				console.log('playerColumn directive');
+				console.log('playerColumn linked');// test
 
 				playerColumnsController.addColumn({
 					title: attributes.title,
-					field: attributes.field
+					type: attributes.type
 				});
 
 			}  
