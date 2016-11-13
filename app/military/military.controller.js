@@ -12,7 +12,6 @@ angular.module('myApp.military', ['ui.router'])
 }])
 
 .controller('MilitaryCtrl', function MilitaryCtrl ($scope, gameService) {
-	var players = [{name: 'heron' }, {name: 'kevin'}];
-	$scope.players = players;
+	$scope.players = gameService.getPlayers();
 });
 

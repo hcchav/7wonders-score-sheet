@@ -1,7 +1,14 @@
 <table class="bordered">
 	<thead>
 	  <tr>
-	      <th ng-repeat="col in cols" class="col s6">{{ col.title }}</th>	      
+	      <th ng-repeat="col in cols" class="col s6">
+	      	<p>{{ col.title }}</p>
+	      	<div ng-if="col.type === 'points-science'">
+	      		<span>Gear</span>
+	      		<span>Tablet</span>
+	      		<span>Compass</span>
+	      	</div>
+	      </th>	      
 	  </tr>
 	</thead>
 	<tbody>
@@ -15,12 +22,12 @@
 				<button ng-click="removePlayer(player)" ng-show="remove" class="">remove</button>
 		    </div>
 		    <!-- Points Column -->
-		    <input ng-if="col.type === 'points'" type="number" value="0" />
-		    <!-- Science Points Column -->
+		    <input class="points" ng-if="col.type === 'points'" type="number" value="0" />
+		    <!-- Science Points Column-->
       		<div ng-if="col.type === 'points-science'">
-      			<input type="number" name="" value="0" /> |
-      			<input type="number" name="" value="0" /> |
-      			<input type="number" name="" value="0" /> |
+      			<input class="points" type="number" name="" value="0" /> |
+      			<input class="points" type="number" name="" value="0" /> |
+      			<input class="points" type="number" name="" value="0" /> 
       		</div>
 	  	</td>
 	  </tr>
