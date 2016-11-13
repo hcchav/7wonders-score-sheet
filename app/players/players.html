@@ -2,9 +2,14 @@
 <div class="row" ng-controller="PlayersCtrl">
 	<div class="col s12">
 	    <md-card>
-	   		<div player-table>
-				
-	   		</div> 
+	   		<player-table players="players"> 
+				<player-columns>
+					<player-column title="Player" type="text"></player-column>
+					<player-column title="Wonder" type="wonder"></player-column>
+				</player-columns>
+				<player-grid></player-grid>
+			</player-table> 
+
 			<div class="row">
 				 <i class="col s2 medium material-icons right" ng-click="addPlayer()">perm_identity</i>
 				 <i ng-click="edit()" class="col s2 medium material-icons right">---</i>
