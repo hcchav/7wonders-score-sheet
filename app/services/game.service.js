@@ -6,10 +6,18 @@ angular.module('gameService', [])
 
 		var game = {
 
+
+
 			players: [],
 
 			addPlayer: function (newPlayer){
-				this.players.push(newPlayer);
+				
+				var aPlayer = new Player();
+				aPlayer.name = newPlayer.name;
+				aPlayer.wonder = newPlayer.wonder;
+				aPlayer.point = 0;
+				console.log(aPlayer);
+				this.players.push(aPlayer);
 			},
 			removePlayer: function(player){
 				this.players.splice(this.players.indexOf(player), 1);
@@ -23,12 +31,12 @@ angular.module('gameService', [])
 
 		};
 
-		
-		var player = {
-			name: '',
-			wonder: '',
-			points: {
+		function Player() {
+			this.name = '';
+			this.wonder = '';
+			this.points = {
 				treasury: 0,
+				military: 0,
 				commercial: 0,
 				science: {
 					gear: 2,
@@ -58,8 +66,9 @@ angular.module('gameService', [])
 						}
 					}
 				}
-			}
+			};
 		};
+		
 
 		
 

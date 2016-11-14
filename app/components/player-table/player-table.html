@@ -22,7 +22,7 @@
 				<button ng-click="removePlayer(player)" ng-show="remove" class="">remove</button>
 		    </div>
 		    <!-- Points Column -->
-		    <input class="points" ng-if="col.type === 'points'" type="number" value="0" />
+		    <input class="points" ng-if="col.type === 'points'" type="number" ng-model="player.points.military" />
 		    <!-- Science Points Column-->
       		<div ng-if="col.type === 'points-science'">
       			<input class="points" type="number" name="" value="0" /> |

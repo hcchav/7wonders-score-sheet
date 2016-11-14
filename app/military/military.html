@@ -1,10 +1,11 @@
 <p>This is the partial for military.</p>
 <div ng-controller="MilitaryCtrl">
+	<input ng-repeat="player in players"  ng-model="player.points.military" />
 	<md-card>
 		<player-table players="players"> 
 			<player-columns>
 				<player-column title="Player" type="text"></player-column>
-				<player-column title="Military" type="points"></player-column>	
+				<player-column title="Military" type="points"></player-column>
 			</player-columns>
 			<player-grid></player-grid>
 		</player-table> 

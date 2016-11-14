@@ -13,5 +13,6 @@ angular.module('myApp.military', ['ui.router'])
 
 .controller('MilitaryCtrl', function MilitaryCtrl ($scope, gameService) {
 	$scope.players = gameService.getPlayers();
+	console.log($scope.players);
 });
 

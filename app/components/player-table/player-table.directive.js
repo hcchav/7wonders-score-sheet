@@ -2,14 +2,13 @@ angular.module('myApp.playerTable', [])
 .directive('playerTable', function(){
 	return {
 		restrict: 'E',
-				controller: function($scope){
+		controller: function($scope){
 			this.setColumns = function(cols){
 				$scope.cols = cols;
 			};	
 		},
 		link: function(){
 			console.log('playerTable link');
-
 		},
 
 	};
