@@ -6,17 +6,12 @@ angular.module('gameService', [])
 
 		var game = {
 
-
-
 			players: [],
 
 			addPlayer: function (newPlayer){
-				
 				var aPlayer = new Player();
 				aPlayer.name = newPlayer.name;
 				aPlayer.wonder = newPlayer.wonder;
-				aPlayer.point = 0;
-				console.log(aPlayer);
 				this.players.push(aPlayer);
 			},
 			removePlayer: function(player){
@@ -39,8 +34,8 @@ angular.module('gameService', [])
 				military: 0,
 				commercial: 0,
 				science: {
-					gear: 2,
-					tablet: 3,
+					gear: 0,
+					tablet: 0,
 					compass: 0,
 					getScienceTotal: function(){
 						
