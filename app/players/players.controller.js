@@ -66,5 +66,5 @@ angular.module('myApp.players', ['ui.router'])
 		modalService.closeModal(id);
 	}
 
-})
+});
 

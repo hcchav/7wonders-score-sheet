@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.version',
   'myApp.players',
   'myApp.military',
+  'myApp.treasury',
   'myApp.playerTable',
   'gameService',
   'ngMaterial'

@@ -1,36 +1,37 @@
-<table class="bordered">
-	<thead>
-	  <tr>
-	      <th ng-repeat="col in cols" class="col s6">
-	      	<p>{{ col.title }}</p>
-	      	<div ng-if="col.type === 'points-science'">
-	      		<span>Gear</span>
-	      		<span>Tablet</span>
-	      		<span>Compass</span>
-	      	</div>
-	      </th>	      
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr ng-repeat="player in players">
-	  	<td ng-repeat="col in cols">
-	  		<!-- Player Name Column -->
-	    	<span ng-if="col.type === 'text'" class="col s6">{{ player.name }}</span>	
-	    	<!-- Wonder Player Column -->
-		   	 <div ng-if="col.type === 'wonder'" class="col s6">
-		    	<span class="" type="text" name="">{{ player.wonder }}</span>
-				<button ng-click="removePlayer(player)" ng-show="remove" class="">remove</button>
+
+	<div class="player-table">
+		<div layout="row" class="player-table-head">
+			<div flex="50" ng-repeat="col in cols" class="player-table-head-cell">
+		      	<span>{{ col.title }}</span>
+		      	<div ng-if="col.type === 'points-science'">
+		      		<span>Gear</span>
+		      		<span>Tablet</span>
+		      		<span>Compass</span>
+		      	</div>
 		    </div>
-		    <!-- Points Column -->
-		    <input class="points" ng-if="col.type === 'points'" type="number" ng-model="player.points.military" />
-		    <!-- Science Points Column-->
-      		<div ng-if="col.type === 'points-science'">
-      			<input class="points" type="number" name="" value="0" /> |
-      			<input class="points" type="number" name="" value="0" /> |
-      			<input class="points" type="number" name="" value="0" /> 
-      		</div>
-	  	</td>
-	  </tr>
-	</tbody>
-</table>
+		</div>
+		<div  layout="row"  class="player-table-row" ng-repeat="player in players">
+			<div class="player-table-cell" flex="50" ng-repeat="col in cols">
+			  	
+			  		<!-- Player Name Column -->
+			    	<span ng-if="col.type === 'text'" class="col s6">{{ player.name }}</span>	
+			    	<!-- Wonder Player Column -->
+				   	 <div ng-if="col.type === 'wonder'" class="col s6">
+				    	<span class="" type="text" name="">{{ player.wonder }}</span>
+						<button ng-click="removePlayer(player)" ng-show="remove" class="">remove</button>
+				    </div>
+				    <!-- Points Column -->
+				    <input class="points" ng-if="col.type === 'points'" type="number" ng-model="player.points.military" />
+				    <!-- Science Points Column-->
+		      		<div ng-if="col.type === 'points-science'">
+		      			<input class="points" type="number" name="" value="0" /> |
+		      			<input class="points" type="number" name="" value="0" /> |
+		      			<input class="points" type="number" name="" value="0" /> 
+		      		</div>
+			 
+	  		</div>
+		</div>
+	</div>
+	
+
 					
