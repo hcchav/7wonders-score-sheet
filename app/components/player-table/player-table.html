@@ -2,7 +2,7 @@
 	<div class="player-table">
 		<div layout="row" class="player-table-head">
 			<div flex="50" ng-repeat="col in cols" class="player-table-head-cell">
-		      	<span>{{ col.title }}</span>
+		      	<span>{{ col.title.toUpperCase() }}</span>
 		      	<div ng-if="col.type === 'points-science'">
 		      		<span>Gear</span>
 		      		<span>Tablet</span>
@@ -21,14 +21,15 @@
 						<button ng-click="removePlayer(player)" ng-show="remove" class="">remove</button>
 				    </div>
 				    <!-- Points Column -->
-				    <input class="points" ng-if="col.type === 'points'" type="number" ng-model="player.points.military" />
+				    <input class="points" ng-if="col.type === 'points'" type="number" ng-model="player.points[col.title]" />
 				    <!-- Science Points Column-->
 		      		<div ng-if="col.type === 'points-science'">
-		      			<input class="points" type="number" name="" value="0" /> |
-		      			<input class="points" type="number" name="" value="0" /> |
-		      			<input class="points" type="number" name="" value="0" /> 
+		      			<input class="points" type="number" name="" ng-model="player.points.science.gear" /> |
+		      			<input class="points" type="number" name="" ng-model="player.points.science.tablet" /> |
+		      			<input class="points" type="number" name="" ng-model="player.points.science.compass" /> 
 		      		</div>
-			 
+		      		<!-- Results Points Column -->
+			    	<span ng-if="col.type === 'results'" >{{ player.points.getTotalResults() }}</span>	
 	  		</div>
 		</div>
 	</div>
