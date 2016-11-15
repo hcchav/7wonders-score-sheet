@@ -60,6 +60,9 @@ angular.module('gameService', [])
 							return 7 * Math.min(this.gear,this.tablet,this.compass);
 						}
 					}
+				},
+				getTotalResults: function(){
+					return this.treasury + this.military;
 				}
 			};
 		};
