@@ -31,6 +31,9 @@ angular.module('gameService', [])
 			this.wonder = '';
 			this.points = {
 				treasury: 0,
+				civilian: 0,
+				wonder: 0,
+				guilds: 0,
 				military: 0,
 				commercial: 0,
 				science: {
