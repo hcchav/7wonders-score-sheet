@@ -10,6 +10,7 @@ angular.module('myApp', [
   'myApp.military',
   'myApp.treasury',
   'myApp.playerTable',
+  'myApp.results',
   'gameService',
   'ngMaterial'
 ]).
