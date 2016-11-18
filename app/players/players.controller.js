@@ -11,7 +11,7 @@ angular.module('myApp.players', ['ui.router', 'ngTouch', 'ngMaterial'])
   });
 }])
 
-.controller('PlayersCtrl', function PlayersCtrl ($log, $scope, gameService, $state) {
+.controller('PlayersCtrl', function PlayersCtrl ($log, $scope, gameService, $state, $mdDialog) {
 	$scope.onSwipeLeft = function(){
 		$log.log('swipe left');
 		$state.go('military');
@@ -24,33 +24,14 @@ angular.module('myApp.players', ['ui.router', 'ngTouch', 'ngMaterial'])
 	// Service Players
 	$scope.players = gameService.getPlayers();
 	
-	// New Player
-	$scope.wonders = [
-		{ city: "Alexandria" },
-		{ city: "Rhodes" },
-		{ city: "Epheses" },
-		{ city: "Babylon" },
-		{ city: "Olympia" },
-		{ city: "Halicarnassus" },
-		{ city: "Gizah" }
-	];
-
-	$scope.newPlayer = {
-		name: "",
-		wonder: ""
-	};
+	
 
 	$log.log($scope.players);
 
-	$scope.addPlayer = function(){
-		var newPlayer = {
-			name: $scope.newPlayer.name,
-			wonder: $scope.newPlayer.wonder.city
-		}
-		gameService.addPlayer(newPlayer);
+	$scope.addPlayer = function(player){
+		
+		gameService.addPlayer(player);
 
-		$scope.newPlayer.name = "";
-		$scope.newPlayer.wonder = "";
 	};
 
 	$scope.edit = function(){
@@ -65,13 +46,69 @@ angular.module('myApp.players', ['ui.router', 'ngTouch', 'ngMaterial'])
 		gameService.update();
 	}
 
-	$scope.openModal = function(){
-		modalService.openModal();
-	}
+	// $scope.openModal = function(){
+	// 	modalService.openModal();
+	// }
 
-	$scope.closeModal = function (id) {
-		modalService.closeModal(id);
-	}
+	// $scope.closeModal = function (id) {
+	// 	modalService.closeModal(id);
+	// }
+	// Modal
+	$scope.showAdvanced = function(ev) {
+    	$mdDialog.show({
+	    	controller: DialogController,
+	    	templateUrl: 'dialog1.tmpl.html',
+	    	parent: angular.element(document.body),
+	    	targetEvent: ev,
+	    	clickOutsideToClose:true,
+	    	fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+	    })
+	    .then(function(newPlayer) {
+	    	// $scope.status = 'You said the information was "' + answer + '".';
+	    	$scope.addPlayer(newPlayer);
+	    }, function() {
+	    	$scope.status = 'You cancelled the dialog.';
+	    });
+  	};
+
+  function DialogController($scope, $mdDialog) {
+  	
+  	$scope.wonders = [
+		{ city: "Alexandria" },
+		{ city: "Rhodes" },
+		{ city: "Epheses" },
+		{ city: "Babylon" },
+		{ city: "Olympia" },
+		{ city: "Halicarnassus" },
+		{ city: "Gizah" }
+	];
+
+	$scope.newPlayer = {
+		name: "",
+		wonder: ""
+	};
+
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+		$mdDialog.cancel();
+    };
+
+    $scope.addPlayer = function(){
+    	var newPlayer = {
+			name: $scope.newPlayer.name,
+			wonder: $scope.newPlayer.wonder.city
+		};
+
+		$mdDialog.hide(newPlayer);
+
+		// $scope.newPlayer.name = "";
+		// $scope.newPlayer.wonder = "";
+    };
+ 
+  }
 
 })
  .config(['$mdIconProvider', function($mdIconProvider) {

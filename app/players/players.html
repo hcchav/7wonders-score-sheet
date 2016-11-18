@@ -12,40 +12,44 @@
 
 			<div class="row player-table-add-player-row">
 			   	<md-icon ng-click="edit()" md-svg-src="img/icons/sets/remove_person.svg" aria-label="person" class="icon"></md-icon>
-			   	<md-icon ng-click="addPlayer()" md-svg-src="img/icons/sets/add_person.svg" aria-label="person" class="icon"></md-icon>
+			   	<md-icon ng-click="showAdvanced($event)" md-svg-src="img/icons/sets/add_person.svg" aria-label="person" class="icon"></md-icon>
 			</div>
 	    </md-card>
 		  <!-- Modal Structure -->
-		<md-card>
-			<div class="modal">
-				<div>
-		    		<md-icon md-svg-src="img/icons/sets/add_person.svg" aria-label="person" class="icon"></md-icon>
-		    		<span>Add Player</span>
-		    		<hr>
-	    		</div>
-				<div class="input-field col s12">
-		          	<label>Name:</label>
-		         	<input type="text" name="" ng-model="newPlayer.name">
-		    	</div>
-		    	
-		    	<div layout="row" >
-				  <md-select placeholder="Select a Wonder" ng-model="newPlayer.wonder" flex="70">
-				    <md-option ng-value="wonder" ng-repeat="wonder in wonders">{{ wonder.city }}
-				    </md-option>
-				  </md-select>
+		<script type="text/ng-template" id="dialog1.tmpl.html">
+			<md-card>
+				<div class="modal">
+					<div>
+			    		<md-icon md-svg-src="img/icons/sets/add_person.svg" aria-label="person" class="icon"></md-icon>
+			    		<span>Add Player</span>
+			    		<hr>
+		    		</div>
+					<div class="input-field col s12">
+			          	<label>Name:</label>
+			         	<input type="text" name="" ng-model="newPlayer.name">
+			    	</div>
+			    	
+			    	<div layout="row" >
+					  <md-select placeholder="Select a Wonder" ng-model="newPlayer.wonder" flex="70">
+					    <md-option ng-value="wonder" ng-repeat="wonder in wonders">{{ wonder.city }}
+					    </md-option>
+					  </md-select>
+					</div>
+					<hr>
+			    	<div layout="row">
+			    		<div ng-click="cancel()" class="modal-button" flex>
+			    			<md-icon  md-svg-src="img/icons/sets/remove.svg" aria-label="person" class="icon"></md-icon>
+			    			<span>CANCEL</span>
+			    		</div>
+			    		<div ng-click="addPlayer()" class="modal-button" flex>
+			    			<md-icon  md-svg-src="img/icons/sets/add.svg" aria-label="person" class="icon"></md-icon>
+			    			<span>ADD</span>
+			    		</div>
+			    	</div>
 				</div>
-				<hr>
-		    	<div layout="row">
-		    		<div ng-click="cancelPlayer()" class="modal-button" flex>
-		    			<md-icon  md-svg-src="img/icons/sets/remove.svg" aria-label="person" class="icon"></md-icon>
-		    			<span>CANCEL</span>
-		    		</div>
-		    		<div ng-click="addPlayer()" class="modal-button" flex>
-		    			<md-icon  md-svg-src="img/icons/sets/add.svg" aria-label="person" class="icon"></md-icon>
-		    			<span>ADD</span>
-		    		</div>
-		    	</div>
-			</div>
-		</md-card>
+			</md-card>
+		</script>
+		<!-- end of Modal -->
+
 	</div>
 </div>
