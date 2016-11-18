@@ -1,27 +1,8 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+nav {
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .points {
@@ -75,11 +56,11 @@
 .treasury {
   background-color: #FBC937;
 }
-.commerce {
-  background-color: #FAC835;
+.commercial {
+  background-color: #FBC800;
 }
 .civilian {
-  background-color: #00629C;f
+  background-color: #03a9f4;
 }
 .guilds {
   background-color: #6441a5;
@@ -91,7 +72,7 @@
   background-color: #09A14E;
 }
 .player-bgc {
-  background-color: #a88e3b;
+  background-color: #486886;
 }
 .results {
   background-color: #3f3c3c;

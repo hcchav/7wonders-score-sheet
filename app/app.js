@@ -21,11 +21,11 @@ angular.module('myApp', [
   'ngTouch'
 ]).
 config(['$locationProvider', '$urlRouterProvider', function($locationProvider, $urlRouterProvider) {
-  
+
   $locationProvider.hashPrefix('!');
 
   $locationProvider.html5Mode(true);
 
-  $urlRouterProvider.otherwise('/view1');
+  $urlRouterProvider.otherwise('/players');
 
 }]);

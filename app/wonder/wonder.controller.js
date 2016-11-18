@@ -13,4 +13,5 @@ angular.module('myApp.wonder', ['ui.router'])
 
 .controller('WonderCtrl', function WonderCtrl ($scope, gameService) {
 	$scope.players = gameService.getPlayers();
+	$scope.backgroundColor = 'wonder';
 });
