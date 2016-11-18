@@ -20,10 +20,10 @@
     "protractor": "^3.2.2"
   },
   "scripts": {
+    "postinstall": "npm install -g bower && bower install",
 
-    "postinstall": " npm install -g bower && bower install",
     "prestart": "npm install",
-    "start": "http-server -a localhost -p 8000 -c-1 ./app",
+    "start": "http-server ./app",
 
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
