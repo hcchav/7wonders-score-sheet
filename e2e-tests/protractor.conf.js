@@ -7,11 +7,12 @@ exports.config = {
     '*.js'
   ],
 
-  capabilities: {
-    'browserName': 'chrome'
-  },
+  // capabilities: {
+  //   'browserName': 'chrome'
+  // },
 
-  chromeOnly: true,
+  chromeOnly: true, 
+  directConnect: true,
 
   baseUrl: 'http://localhost:8000/',
 
