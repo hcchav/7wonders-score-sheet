@@ -25,10 +25,11 @@
 }
 
 .points {
-	width: 20px;
+	width: 30px; 
 }
 
 .player-table {
+
 }
 
 .player-table-row div {
@@ -37,7 +38,7 @@
 }
 
 .player-table-head {
-  background-color: #2c7ac9;
+  /*background-color: #2c7ac9;*/
   color: white;
   /*text-align: left;*/
 }
@@ -45,11 +46,93 @@
 .player-table-head-cell {
   padding: 5px 10px;  
 }
-
 .player-table-cell {
   padding: 10px;
   border-bottom: 1px solid #e2e5e8;
 }
+.player-table-add-player-row {
+  height: 18px;
+  padding: 10px;
+}
+.player-table-add-player-row .icon {
+  display: inline;
+  float: right;
+  width: 50px;
+  color: black;
+}
+.modal {
+  padding: 10px;
+}
+.modal-button {
+  text-align: center;
+}
+.modal-button:first-child {
+  border-right: 1px solid black;
+}
+.military {
+  background-color: #F62911;
+}
+.treasury {
+  background-color: #FBC937;
+}
+.commerce {
+  background-color: #FAC835;
+}
+.civilian {
+  background-color: #00629C;f
+}
+.guilds {
+  background-color: #6441a5;
+}
+.wonder {
+  background-color: #865d28;
+}
+.science {
+  background-color: #09A14E;
+}
+.player-bgc {
+  background-color: #a88e3b;
+}
+.results {
+  background-color: #3f3c3c;
+}
 
+.view-animate-container {
+  position:relative;
+  height:100px!important;
+  background:white;
+  border:1px solid black;
+  height:40px;
+  overflow:hidden;
+}
+
+.view-animate {
+  padding:10px;
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+
+  display:block;
+  width:100%;
+  /*border-left:1px solid black;*/
+
+  position:absolute;
+  top:49px;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:10px;
+}
+
+.view-animate.ng-enter {
+  left:100%;
+}
+.view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.view-animate.ng-leave.ng-leave-active {
+  left:-100%;
+}
 
 

@@ -1,6 +1,6 @@
 
 	<div class="player-table">
-		<div layout="row" class="player-table-head">
+		<div layout="row" ng-class="backgroundColor" class="player-table-head">
 			<div flex="50" ng-repeat="col in cols" class="player-table-head-cell">
 		      	<span>{{ col.title.toUpperCase() }}</span>
 		      	<div ng-if="col.type === 'points-science'">

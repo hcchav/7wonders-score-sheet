@@ -12,4 +12,5 @@ angular.module('myApp.results', ['ui.router'])
 }])
 .controller('ResultsCtrl', function ResultsCtrl($scope, gameService){
 	$scope.players = gameService.getPlayers();
+	$scope.backgroundColor = "results";
 });

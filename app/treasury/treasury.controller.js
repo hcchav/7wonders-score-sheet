@@ -11,4 +11,5 @@ angular.module('myApp.treasury', ['ui.router'])
 }])
 .controller('TreasuryCtrl', function TreasuryCtrl($scope, gameService){
 	$scope.players = gameService.getPlayers();
+	$scope.backgroundColor = "treasury";
 });

@@ -13,4 +13,5 @@ angular.module('myApp.science', ['ui.router'])
 
 .controller('ScienceCtrl', function ScienceCtrl ($scope, gameService) {
 	$scope.players = gameService.getPlayers();
+	$scope.backgroundColor = 'science';
 });

@@ -13,4 +13,5 @@ angular.module('myApp.civilian', ['ui.router'])
 
 .controller('CivilianCtrl', function CivilianCtrl ($scope, gameService) {
 	$scope.players = gameService.getPlayers();
+	$scope.backgroundColor = 'civilian';
 });

@@ -13,4 +13,5 @@ angular.module('myApp.guilds', ['ui.router'])
 
 .controller('GuildsCtrl', function GuildsCtrl ($scope, gameService) {
 	$scope.players = gameService.getPlayers();
+	$scope.backgroundColor = "guilds";
 });

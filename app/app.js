@@ -17,12 +17,15 @@ angular.module('myApp', [
   'myApp.playerTable',
   'myApp.results',
   'gameService',
-  'ngMaterial'
+  'ngMaterial',
+  'ngTouch'
 ]).
 config(['$locationProvider', '$urlRouterProvider', function($locationProvider, $urlRouterProvider) {
+  
   $locationProvider.hashPrefix('!');
 
   $locationProvider.html5Mode(true);
 
   $urlRouterProvider.otherwise('/view1');
+
 }]);

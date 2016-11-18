@@ -1,5 +1,5 @@
 <!-- Player View -->
-<div class="row" ng-controller="PlayersCtrl">
+<div class="row" ng-controller="PlayersCtrl" ng-swipe-left="onSwipeLeft('military')">
 	<div class="col s12">
 	    <md-card>
 	   		<player-table players="players"> 
@@ -10,29 +10,42 @@
 				<player-grid></player-grid>
 			</player-table> 
 
-			<div class="row">
-				 <i class="col s2 medium material-icons right" ng-click="addPlayer()">perm_identity</i>
-				 <i ng-click="edit()" class="col s2 medium material-icons right">---</i>
+			<div class="row player-table-add-player-row">
+			   	<md-icon ng-click="edit()" md-svg-src="img/icons/sets/remove_person.svg" aria-label="person" class="icon"></md-icon>
+			   	<md-icon ng-click="addPlayer()" md-svg-src="img/icons/sets/add_person.svg" aria-label="person" class="icon"></md-icon>
 			</div>
 	    </md-card>
 		  <!-- Modal Structure -->
 		<md-card>
-			<div class="input-field col s12">
-	          	<label>Name:</label>
-	         	<input type="text" name="" ng-model="newPlayer.name">
-	    	</div>
-	    	
-	    	<div layout="row" >
-			  <md-select placeholder="Select a Wonder" ng-model="newPlayer.wonder" flex="33">
-			    <md-option  ng-value="wonder" ng-repeat="wonder in wonders">{{ wonder.city }}
-			    </md-option>
-			  </md-select>
+			<div class="modal">
+				<div>
+		    		<md-icon md-svg-src="img/icons/sets/add_person.svg" aria-label="person" class="icon"></md-icon>
+		    		<span>Add Player</span>
+		    		<hr>
+	    		</div>
+				<div class="input-field col s12">
+		          	<label>Name:</label>
+		         	<input type="text" name="" ng-model="newPlayer.name">
+		    	</div>
+		    	
+		    	<div layout="row" >
+				  <md-select placeholder="Select a Wonder" ng-model="newPlayer.wonder" flex="70">
+				    <md-option ng-value="wonder" ng-repeat="wonder in wonders">{{ wonder.city }}
+				    </md-option>
+				  </md-select>
+				</div>
+				<hr>
+		    	<div layout="row">
+		    		<div ng-click="cancelPlayer()" class="modal-button" flex>
+		    			<md-icon  md-svg-src="img/icons/sets/remove.svg" aria-label="person" class="icon"></md-icon>
+		    			<span>CANCEL</span>
+		    		</div>
+		    		<div ng-click="addPlayer()" class="modal-button" flex>
+		    			<md-icon  md-svg-src="img/icons/sets/add.svg" aria-label="person" class="icon"></md-icon>
+		    			<span>ADD</span>
+		    		</div>
+		    	</div>
 			</div>
-	    	<div>
-	    		<a ng-click="addPlayer()" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-	    	</div>
-			
 		</md-card>
-		
 	</div>
 </div>

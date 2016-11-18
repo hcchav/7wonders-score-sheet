@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.players', ['ui.router'])
+angular.module('myApp.players', ['ui.router', 'ngTouch', 'ngMaterial'])
 
 .config(['$stateProvider', function($stateProvider) {
   $stateProvider
@@ -11,7 +11,14 @@ angular.module('myApp.players', ['ui.router'])
   });
 }])
 
-.controller('PlayersCtrl', function PlayersCtrl ($log, $scope, gameService) {
+.controller('PlayersCtrl', function PlayersCtrl ($log, $scope, gameService, $state) {
+	$scope.onSwipeLeft = function(){
+		$log.log('swipe left');
+		$state.go('military');
+
+	}
+	// css
+	$scope.backgroundColor = "player-bgc";
 
 	$scope.remove = false;
 	// Service Players
@@ -66,5 +73,10 @@ angular.module('myApp.players', ['ui.router'])
 		modalService.closeModal(id);
 	}
 
-});
+})
+ .config(['$mdIconProvider', function($mdIconProvider) {
+    $mdIconProvider
+      .iconSet('social', 'img/icons/sets/social-icons.svg', 24)
+      .defaultIconSet('img/icons/sets/core-icons.svg', 24);
+  }]);
 

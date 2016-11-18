@@ -13,4 +13,5 @@ angular.module('myApp.commercial', ['ui.router'])
 
 .controller('CommercialCtrl', function CommercialCtrl ($scope, gameService) {
 	$scope.players = gameService.getPlayers();
+	$scope.backgroundColor = 'commercial';
 });

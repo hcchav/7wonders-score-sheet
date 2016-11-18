@@ -65,7 +65,13 @@ angular.module('gameService', [])
 					}
 				},
 				getTotalResults: function(){
-					return this.treasury + this.military;
+					return this.treasury +
+						   this.commercial +
+						   this.civilian + 
+						   this.military +
+						   this.wonder +
+						   this.guilds +
+						   this.science.getScienceTotal();
 				}
 			};
 		};
