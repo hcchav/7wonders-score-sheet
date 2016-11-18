@@ -17,12 +17,13 @@
     "protractor": "^3.2.2"
   },
   "scripts": {
-    "postinstall": "bower install",
+
+
+    "postinstall": "npm install && bower install",
 
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1 ./app",
 
-    "pretest": "npm install",
     
 
     "preupdate-webdriver": "npm install",
