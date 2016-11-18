@@ -6,7 +6,7 @@
   "repository": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "engines": {
-    "node": "4.4.4"
+    "node": "4.5"
   },
   "devDependencies": {
     "bower": "^1.7.7",
@@ -21,13 +21,9 @@
   },
   "scripts": {
 
-
+    "preinstall": "npm install",
     "postinstall": "bower install",
-
-    "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1 ./app",
-
-    
 
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
