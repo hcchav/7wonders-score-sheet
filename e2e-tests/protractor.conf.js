@@ -7,9 +7,9 @@ exports.config = {
     '*.js'
   ],
 
-  // capabilities: {
-  //   'browserName': 'chrome'
-  // },
+  capabilities: {
+    'browserName': 'chrome'
+  },
 
   chromeOnly: true, 
   directConnect: true,
