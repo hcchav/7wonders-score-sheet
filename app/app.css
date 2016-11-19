@@ -1,9 +1,77 @@
 /* app css stylesheet */
 
-nav {
-    overflow: auto;
-    white-space: nowrap;
+/* nav */
+.scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+
+.nav-flex {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  flex: 0 0 120px;
+}
+
+.nav-item {
+  flex: 0 0 auto;
+}
+
+header {
+  /*background: #152637*/;
+}
+
+.example-one-header,
+ {
+  border-radius: 3px;
+}
+
+.logo {
+  text-align: center;
+  font-weight: 700;
+  color: #727c87;
+  border-right: 1px solid rgba(114, 124, 135, 0.4);
+  padding: 13px 24px 12px;
+}
+
+.logo,
+.nav-item {
+  padding: 13px 16px 12px;
+}
+.logo:not(:last-child),
+.nav-item:not(:last-child) {
+  border-right: 1px solid rgba(114, 124, 135, 0.2);
+}
+
+/** {
+  box-sizing: border-box;
+}*/
+
+body {
+  /*margin: 5% auto;*/
+  /*color: #64cce3;*/
+  line-height: 1.5;
+}
+
+.logo,
+.nav-item {
+  font-size: 14px;
+}
+
+.title {
+  margin: 24px 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: #999;
+}
+/* end of nav*/
+
 
 .points {
 	width: 30px; 

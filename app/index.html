@@ -9,7 +9,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css"> -->
@@ -21,7 +20,7 @@
 </head>
 <body>
   <!-- Menu -->
-  <md-nav-bar md-selected-nav-item="currentNavItem">
+<!-- <md-nav-bar md-selected-nav-item="currentNavItem">
   <md-nav-item md-nav-click="goto('page1')" ui-sref="players" name="page1">Players</md-nav-item>
   <md-nav-item md-nav-click="goto('page2')" ui-sref="military" name="page2">Military</md-nav-item>
   <md-nav-item md-nav-click="goto('page3')" ui-sref="treasury" name="page3">Treasury</md-nav-item>
@@ -32,6 +31,26 @@
   <md-nav-item md-nav-click="goto('page8')" ui-sref="science" name="page8">Science</md-nav-item>
   <md-nav-item md-nav-click="goto('page9')" ui-sref="results" name="page9">Results</md-nav-item>
 </md-nav-bar>
+ -->
+
+<div class='container example-one'>
+  <div class='title'>7 WONDERS SCORE</div>
+  <header class='example-one-header scroll'>
+    <nav class='nav-flex'>
+      <span class='nav-item' ui-sref="players">Players</span>
+      <span class='nav-item' ui-sref="military">Military</span>
+      <span class='nav-item' ui-sref="treasury">Treasury</span>
+      <span class='nav-item' ui-sref="wonder">Wonder</span>
+      <span class='nav-item' ui-sref="civilian">Civilian</span>
+      <span class='nav-item' ui-sref="commercial">Commercial</span>
+      <span class='nav-item' ui-sref="guilds">Guilds</span>
+      <span class='nav-item' ui-sref="science">Science</span>
+      <span class='nav-item' ui-sref="results">Results</span>
+    </nav>
+  </header>
+</div>
+
+
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
