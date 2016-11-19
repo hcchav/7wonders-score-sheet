@@ -126,3 +126,6 @@ swipe
   opacity:1;
 }
 
+.md-dialog-container {
+  height: auto !important;
+}
