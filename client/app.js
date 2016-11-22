@@ -5,7 +5,6 @@ angular.module('myApp', [
   'ui.router',
   'ngCookies',
   'ngResource',
-  'ngSanitize',
   'ngMaterial',
   'ngTouch'
 ]).
