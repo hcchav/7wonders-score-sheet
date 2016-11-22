@@ -23,7 +23,7 @@
   "scripts": {
     "postinstall": "npm install -g bower && bower install",
     "prestart": "npm install",
-    "start": "http-server ./app",
+    "start": "http-server ./client",
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
