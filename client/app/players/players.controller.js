@@ -5,7 +5,7 @@ angular.module('myApp')
 .config(['$stateProvider', function($stateProvider) {
   $stateProvider
   	.state('players', {
-  		url: '/players',
+  		url: '/',
     	templateUrl: 'app/players/players.html',
     	controller: 'PlayersCtrl'
   });
