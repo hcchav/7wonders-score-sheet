@@ -11,7 +11,9 @@ angular.module('myApp')
   });
 }])
 
-.controller('CommercialCtrl', function CommercialCtrl ($scope, gameService) {
+.controller('CommercialCtrl', function CommercialCtrl ($scope, $rootScope, gameService) {
 	$scope.players = gameService.getPlayers();
 	$scope.backgroundColor = 'commercial';
+	// set theme color
+	$rootScope.$emit('themeColor', $scope.backgroundColor);
 });

@@ -1,23 +1,16 @@
 'use strict';
 
-angular.module('dashboardApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }];
+angular.module('myApp')
+  .controller('NavbarCtrl',  function NavbarCtrl($scope, $rootScope, $location) {
+    // default player color theme color
+    $scope.themeColor = 'player-bgc';
 
-    // $scope.isCollapsed = true;
-    // $scope.isLoggedIn = Auth.isLoggedIn;
-    // $scope.isAdmin = Auth.isAdmin;
-    // // $scope.getCurrentUser = Auth.getCurrentUser;
-
-    // $scope.logout = function() {
-    //   Auth.logout();
-    //   $location.path('/login');
-    // };
+    // events
+    $rootScope.$on('themeColor', function (event, themeColor) {
+      $scope.themeColor = themeColor; 
+    });
 
     $scope.isActive = function(route) {
       return route === $location.path();
     };
-  });
+});

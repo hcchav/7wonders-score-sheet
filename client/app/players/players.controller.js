@@ -11,14 +11,19 @@ angular.module('myApp')
   });
 }])
 
-.controller('PlayersCtrl', function PlayersCtrl ($log, $scope, gameService, $state, $mdDialog) {
+.controller('PlayersCtrl', function PlayersCtrl ($log, $scope, $rootScope, gameService, $state, $mdDialog) {
 	$scope.onSwipeLeft = function(){
 		$log.log('swipe left');
 		$state.go('military');
 
 	}
 	// css
-	$scope.backgroundColor = "player-bgc";
+	var playerThemeColor = "player-bgc";
+
+	// set theme color
+	$rootScope.$emit('themeColor', playerThemeColor);
+	
+	$scope.backgroundColor = playerThemeColor;
 
 	$scope.remove = false;
 	// Service Players

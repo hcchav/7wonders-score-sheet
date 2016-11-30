@@ -1,15 +1,18 @@
-<div class='container nav-container'>
-  <header class='scroll'>
-    <nav class='nav-flex'>
-      <span class='nav-item player-bgc' ui-sref-active="active" ui-sref="players">Players</span>
-      <span class='nav-item military' ui-sref-active="active" ui-sref="military">Military</span>
-      <span class='nav-item treasury' ui-sref-active="active" ui-sref="treasury">Treasury</span>
-      <span class='nav-item wonder' ui-sref-active="active" ui-sref="wonder">Wonder</span>
-      <span class='nav-item civilian' ui-sref-active="active" ui-sref="civilian">Civilian</span>
-      <span class='nav-item commercial' ui-sref-active="active" ui-sref="commercial">Commercial</span>
-      <span class='nav-item guilds' ui-sref-active="active" ui-sref="guilds">Guilds</span>
-      <span class='nav-item science' ui-sref-active="active" ui-sref="science">Science</span>
-      <span class='nav-item results' ui-sref-active="active" ui-sref="results">Results</span>
-    </nav>
-  </header>
+<div ng-controller='NavbarCtrl'>
+  <div class='title' ng-class="themeColor">7 WONDERS COMPANION</div>
+  <div class='container nav-container'>
+    <header class='scroll'>
+      <nav class='nav-flex'>
+        <span class='nav-item player-bgc' ui-sref-active="active" ui-sref="players">Players</span>
+        <span class='nav-item military' ui-sref-active="active" ui-sref="military">Military</span>
+        <span class='nav-item treasury' ui-sref-active="active" ui-sref="treasury">Treasury</span>
+        <span class='nav-item wonder' ui-sref-active="active" ui-sref="wonder">Wonder</span>
+        <span class='nav-item civilian' ui-sref-active="active" ui-sref="civilian">Civilian</span>
+        <span class='nav-item commercial' ui-sref-active="active" ui-sref="commercial">Commercial</span>
+        <span class='nav-item guilds' ui-sref-active="active" ui-sref="guilds">Guilds</span>
+        <span class='nav-item science' ui-sref-active="active" ui-sref="science">Science</span>
+        <span class='nav-item results' ui-sref-active="active" ui-sref="results">Results</span>
+      </nav>
+    </header>
+  </div>
 </div>

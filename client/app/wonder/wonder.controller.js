@@ -11,7 +11,9 @@ angular.module('myApp')
   });
 }])
 
-.controller('WonderCtrl', function WonderCtrl ($scope, gameService) {
+.controller('WonderCtrl', function WonderCtrl ($scope, $rootScope, gameService) {
 	$scope.players = gameService.getPlayers();
 	$scope.backgroundColor = 'wonder';
+	// set theme color
+	$rootScope.$emit('themeColor', $scope.backgroundColor);
 });

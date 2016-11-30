@@ -11,7 +11,9 @@ angular.module('myApp')
   });
 }])
 
-.controller('GuildsCtrl', function GuildsCtrl ($scope, gameService) {
+.controller('GuildsCtrl', function GuildsCtrl ($scope, $rootScope, gameService) {
 	$scope.players = gameService.getPlayers();
 	$scope.backgroundColor = "guilds";
+	// set theme color
+	$rootScope.$emit('themeColor', $scope.backgroundColor);
 });

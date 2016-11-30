@@ -11,7 +11,9 @@ angular.module('myApp')
   });
 }])
 
-.controller('CivilianCtrl', function CivilianCtrl ($scope, gameService) {
+.controller('CivilianCtrl', function CivilianCtrl ($scope, $rootScope, gameService) {
 	$scope.players = gameService.getPlayers();
 	$scope.backgroundColor = 'civilian';
+	// set theme color
+	$rootScope.$emit('themeColor', $scope.backgroundColor);
 });

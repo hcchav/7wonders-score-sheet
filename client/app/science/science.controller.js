@@ -11,7 +11,9 @@ angular.module('myApp')
   });
 }])
 
-.controller('ScienceCtrl', function ScienceCtrl ($scope, gameService) {
+.controller('ScienceCtrl', function ScienceCtrl ($scope, $rootScope, gameService) {
 	$scope.players = gameService.getPlayers();
 	$scope.backgroundColor = 'science';
+	// set theme color
+	$rootScope.$emit('themeColor', $scope.backgroundColor);
 });

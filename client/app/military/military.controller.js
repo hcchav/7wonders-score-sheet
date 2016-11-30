@@ -11,8 +11,11 @@ angular.module('myApp')
   });
 }])
 
-.controller('MilitaryCtrl', function MilitaryCtrl ($scope, gameService) {
+.controller('MilitaryCtrl', function MilitaryCtrl ($scope, $rootScope, gameService) {
 	$scope.players = gameService.getPlayers();
 	$scope.backgroundColor = "military";
+
+	// set theme color
+	$rootScope.$emit('themeColor', $scope.backgroundColor);
 });
 

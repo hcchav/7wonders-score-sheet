@@ -9,7 +9,9 @@ angular.module('myApp')
     	controller: 'TreasuryCtrl'
   });
 }])
-.controller('TreasuryCtrl', function TreasuryCtrl($scope, gameService){
+.controller('TreasuryCtrl', function TreasuryCtrl($scope, $rootScope, gameService){
 	$scope.players = gameService.getPlayers();
 	$scope.backgroundColor = "treasury";
+	// set theme color
+	$rootScope.$emit('themeColor', $scope.backgroundColor);
 });

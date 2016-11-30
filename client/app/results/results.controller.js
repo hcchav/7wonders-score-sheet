@@ -10,7 +10,9 @@ angular.module('myApp')
     	controller: 'ResultsCtrl'
   });
 }])
-.controller('ResultsCtrl', function ResultsCtrl($scope, gameService){
+.controller('ResultsCtrl', function ResultsCtrl($scope, $rootScope, gameService){
 	$scope.players = gameService.getPlayers();
 	$scope.backgroundColor = "results";
+	// set theme color
+	$rootScope.$emit('themeColor', $scope.backgroundColor);
 });
