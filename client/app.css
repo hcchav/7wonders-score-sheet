@@ -71,14 +71,24 @@ body {
   padding: 10px;
   border-bottom: 1px solid #e2e5e8;
 }
-.player-table-add-player-row {
-  height: 18px;
-  padding: 10px;
+.player-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
-.player-table-add-player-row .icon {
-  display: inline;
-  float: right;
-  width: 50px;
+.player-buttons-container {
+  border-top: 1px rgba(0,0,0,0.2);
+  border-left: 1px rgba(0,0,0,0.2);
+  border-right: 1px rgba(0,0,0,0.2);
+  box-shadow: 0 -1px 1px rgba(0,0,0,0.2);
+  height: 35px;
+}
+.player-buttons .icon {
+  padding: 0 10px 0 10px;
+  width: 60px;
+  height: 35px;
   color: black;
 }
 
@@ -132,7 +142,8 @@ body {
 .md-dialog-container {
   height: auto !important;
 }
-@media (min-width: 750px) and (max-width: 1200px) {
+
+@media (min-width: 600px) and (max-width: 1200px) {
   .nav-item {
     flex: auto;
     width: 25%;

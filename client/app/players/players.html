@@ -1,6 +1,6 @@
 <!-- Player View -->
 <div class="row" ng-controller="PlayersCtrl" ng-swipe-left="onSwipeLeft('military')">
-	<div class="col s12">
+	<div class="player-table-container">
 	    <md-card class="player-card">
 	   		<player-table players="players"> 
 				<player-columns>
@@ -10,11 +10,10 @@
 				<player-grid></player-grid>
 			</player-table> 
 
-			<div class="row player-table-add-player-row">
-			   	<md-icon ng-click="edit()" md-svg-src="img/icons/sets/remove_person.svg" aria-label="person" class="icon"></md-icon>
-			   	<md-icon ng-click="showAdvanced($event)" md-svg-src="img/icons/sets/add_person.svg" aria-label="person" class="icon"></md-icon>
-			</div>
+			
 	    </md-card>
+		
+
 		  <!-- Modal Structure -->
 		<script type="text/ng-template" id="dialog1.tmpl.html">
 			<md-card>
@@ -51,5 +50,13 @@
 		</script>
 		<!-- end of Modal -->
 
+	</div>
+	<div class="row player-buttons">
+		<div class="player-buttons-container">
+			<md-icon ng-click="edit()" md-svg-src="img/icons/sets/remove_person.svg" aria-label="person" class="icon">
+			</md-icon>
+			<span class="player-buttons-divider">|</span>
+			<md-icon ng-click="showAdvanced($event)" md-svg-src="img/icons/sets/add_person.svg" aria-label="person" class="icon"></md-icon>
+		</div>
 	</div>
 </div>
