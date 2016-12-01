@@ -23,6 +23,7 @@ body {
 }
 
 .nav-item {
+  text-align: center;
   flex: 0 0 auto;
 }
 
@@ -95,7 +96,7 @@ body {
   background-color: #F62911;
 }
 .treasury {
-  background-color: #FBC937;
+  background-color: #d7d8d5;
 }
 .commercial {
   background-color: #FBC800;
@@ -120,7 +121,7 @@ body {
 }
 
 .view-animate.ng-enter {
-  transition: 1s linear all;
+  transition: 1.6s linear all;
   opacity:0;
 }
 
@@ -130,4 +131,30 @@ body {
 
 .md-dialog-container {
   height: auto !important;
+}
+@media (min-width: 750px) and (max-width: 1200px) {
+  .nav-item {
+    flex: auto;
+    width: 25%;
+  }
+  .scroll {
+   display: inherit;
+  }
+}
+@media (min-width: 850px) {
+  .nav-item {
+    flex: auto;
+    width: 25%;
+  }
+  .nav-container {
+    margin: 0 10%;
+  }
+  .scroll {
+   display: inherit;
+  }
+  .player-card {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
 }
